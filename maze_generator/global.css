@@ -1,0 +1,87 @@
+body {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    flex-flow: column nowrap;
+    flex: auto;
+
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.solid {
+    background: black;
+}
+
+.empty {
+    background: white;
+}
+
+.grid {
+    width: 1200px;
+    height: 1200px;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.cell {
+    height: 12px;
+    width: 12px;
+    background-color: white;
+    display: grid;
+    grid-template-rows: [row-start] 2px [row-end row2-start] 4px [row2-end row3-start] 4px [row3-end row4-start] 2px [row4-end];
+    grid-template-columns: [col-start] 2px [col-end col2-start] 4px [col2-end col3-start] 4px [col3-end col4-start] 2px [col4-end];
+    grid-template-areas:
+            "corneri top top cornerii"
+            "left empty empty right"
+            "left empty empty right"
+            "corneriii bottom bottom corneriv";
+}
+
+.left {
+    grid-area: left;
+    height: 8px;
+    width: 2px;
+}
+
+.right {
+    grid-area: right;
+    height: 8px;
+    width: 2px;
+}
+
+.up {
+    grid-area: top;
+    height: 2px;
+    width: 8px;
+}
+
+.down {
+    grid-area: bottom;
+    height: 2px;
+    width: 8px;
+}
+
+.corner {
+    height: 2px;
+    width: 2px;
+}
+
+.corneri {
+    grid-area: corneri;
+}
+
+.cornerii {
+    grid-area: cornerii;
+}
+
+.corneriii {
+    grid-area: corneriii;
+}
+
+.corneriv {
+    grid-area: corneriv;
+}
