@@ -2,8 +2,8 @@
 
 class daedalus
 {
-    public array $grid = [];
-    public array $visited = [];
+    private array $grid = [];
+    private array $visited = [];
     private array $stack = [];
     public function __construct(
         public int $size = 100
@@ -93,14 +93,14 @@ class daedalus
         for ($y = $this->size - 1; $y >= 0; $y--) {
             for ($x = 0; $x < $this->size; $x++) {
                 echo '<div class="cell">';
-                // Wall order in array is left, up, right, down
-                for ($z = 0; $z < 4; $z++) {
-                    echo '<div class="'.($this->grid[$y][$x][$z] ? 'solid ' : 'empty ').$wall_class[$z].'"></div>';
-                }
-                echo'<div class="solid corner corneri"></div>';
-                echo'<div class="solid corner cornerii"></div>';
-                echo'<div class="solid corner corneriii"></div>';
-                echo'<div class="solid corner corneriv"></div>';
+                echo '<div class="'.($this->grid[$y][$x][0] ? 'solid ' : 'empty ').'left"></div>';
+                echo '<div class="'.($this->grid[$y][$x][1] ? 'solid ' : 'empty ').'up"></div>';
+                echo '<div class="'.($this->grid[$y][$x][2] ? 'solid ' : 'empty ').'right"></div>';
+                echo '<div class="'.($this->grid[$y][$x][3] ? 'solid ' : 'empty ').'down"></div>';
+                echo '<div class="solid corner corneri"></div>';
+                echo '<div class="solid corner cornerii"></div>';
+                echo '<div class="solid corner corneriii"></div>';
+                echo '<div class="solid corner corneriv"></div>';
                 echo '</div>';
             }
         }
