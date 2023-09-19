@@ -20,13 +20,6 @@ body {
     background: white;
 }
 
-.grid {
-    width: 1200px;
-    height: 1200px;
-    display: flex;
-    flex-flow: row wrap;
-}
-
 .cell {
     height: 12px;
     width: 12px;
