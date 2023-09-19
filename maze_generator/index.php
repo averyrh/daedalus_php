@@ -4,7 +4,7 @@
     <body>
         <?php
             try {
-                $daedalus = new daedalus();
+                $daedalus = new daedalus(50);
                 $daedalus->generate();
                 $daedalus->print();
             } catch (Exception $e) {
