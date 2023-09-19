@@ -77,11 +77,9 @@ class daedalus
                 $i = count($this->stack) - 1;
                 while (!$this->unvisited_neighbors(...$cell)) {
                     $i--;
+                    if ($i == 0) break 2;
                     array_pop($this->stack);
                     $cell = $this->stack[$i];
-                    if ($i === 0) {
-                        break 2;
-                    }
                 }
             }
         }
