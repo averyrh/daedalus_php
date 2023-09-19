@@ -88,29 +88,16 @@ class daedalus
         $this->grid[0][random_int(0, $this->size)][3] = 0;
         $this->grid[$this->size - 1][random_int(0, $this->size)][1] = 0;
     }
-    private function class(int $type): string
-    {
-        return match ($type) {
-            0 => 'left',
-            1 => 'up',
-            2 => 'right',
-            3 => 'down',
-            default => ''
-        };
-    }
     public function print(): void
     {
+        $wall_class = ['left', 'up', 'right', 'down'];
         echo '<div class="grid">';
         for ($y = $this->size - 1; $y >= 0; $y--) {
             for ($x = 0; $x < $this->size; $x++) {
                 echo '<div class="cell">';
                 // Wall order in array is left, up, right, down
-                foreach ($this->grid[$y][$x] as $i => $wall) {
-                    if ($wall) {
-                        echo '<div class="solid '.$this->class($i).'"></div>';
-                    } else {
-                        echo '<div class="empty '.$this->class($i).'"></div>';
-                    }
+                for ($z = 0; $z < 4; $z++) {
+                    echo '<div class="'.($this->grid[$y][$x][$z] ? 'solid ' : 'empty ').$wall_class[$z].'"></div>';
                 }
                 echo'<div class="solid corner corneri"></div>';
                 echo'<div class="solid corner cornerii"></div>';
