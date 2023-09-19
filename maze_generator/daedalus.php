@@ -88,7 +88,6 @@ class daedalus
     }
     public function print(): void
     {
-        $wall_class = ['left', 'up', 'right', 'down'];
         echo '<div class="grid">';
         for ($y = $this->size - 1; $y >= 0; $y--) {
             for ($x = 0; $x < $this->size; $x++) {
